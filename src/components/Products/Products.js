@@ -1,12 +1,11 @@
-import React from 'react';
+import React from "react";
+import Hero from "../Hero/Hero";
 
 const Products = () => {
-    return(
-        <>
-            <h1>
-                Fiska Abborre på Products!
-            </h1>
-        </>
-    );
-}
+  return (
+    <>
+      <Hero text="Fiska Abborre på Products!" />
+    </>
+  );
+};
 export default Products;

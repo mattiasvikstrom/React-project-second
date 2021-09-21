@@ -1,11 +1,10 @@
 import React from 'react';
+import Hero from "../../components/Hero/Hero";
 
 const AboutView = () => {
     return(
         <>
-            <h1>
-                Fiska Abborre på Aboutview!
-            </h1>
+            <Hero text="Fiska Abborre på About us!" />
         </>
     );
 }
