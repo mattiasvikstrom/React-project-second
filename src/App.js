@@ -1,7 +1,7 @@
 import "./App.css";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
-import { UserContext, UserProvider } from "./shared/global/provider/UserProvider";
+import { UserProvider } from "./shared/global/provider/UserProvider";
 import Navbar from "./components/Navigation/Navigation";
 import Home from "./components/Home/Home";
 import AboutView from "./Views/AboutView/AboutView";
@@ -39,7 +39,7 @@ function App() {
         <Route path="/search">
           <Search keyword={searchText} searchResults={searchResults} />
         </Route>
-        <Route path="/movies/:id" component={MovieView} />
+        <Route path="/movies/" component={MovieView} />
       </Switch>
       </UserProvider>
     </div>
