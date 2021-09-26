@@ -1,13 +1,15 @@
 import React from "react";
 import Hero from "../../components/Hero/Hero";
-import { useParams } from "react-router";
+import { useLocation } from "react-router";
 import { useEffect, useState } from "react";
 
+
 const MovieView = () => {
-  const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-
+  const location = useLocation()
+  const id = location.state
+  
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=3255eeaf8a6e0ad9884eca1fe75a2ba7&language=en-US&include_adult=false`
@@ -33,7 +35,7 @@ const MovieView = () => {
       <div className="container my-5">
           <div className="row">
               <div className="col-md-3">
-              <img src={posterPath} className="img-fluid shadow rounded" onError={(event) => event.target.src = '/no-image.jpg'} />
+              <img src={posterPath} className="img-fluid shadow rounded" onError={(event) => event.target.src = '/no-image.jpg'} alt="Movieposter" />
               </div>
               <div className="col-md-9">
                 <h2>{movieDetails.original_title}</h2>
