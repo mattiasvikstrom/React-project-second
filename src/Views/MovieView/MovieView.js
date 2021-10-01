@@ -3,13 +3,12 @@ import Hero from "../../components/Hero/Hero";
 import { useLocation } from "react-router";
 import { useEffect, useState } from "react";
 
-
 const MovieView = () => {
   const [movieDetails, setMovieDetails] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation()
   const id = location.state
-  
+
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=3255eeaf8a6e0ad9884eca1fe75a2ba7&language=en-US&include_adult=false`

@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { UserProvider } from "./shared/global/provider/UserProvider";
 import Navbar from "./components/Navigation/Navigation";
 import Home from "./components/Home/Home";
@@ -40,6 +40,7 @@ function App() {
           <Search keyword={searchText} searchResults={searchResults} />
         </Route>
         <Route path="/movies/" component={MovieView} />
+        <Redirect to='/' />
       </Switch>
       </UserProvider>
     </div>
